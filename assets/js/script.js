@@ -1,8 +1,19 @@
 function hide(element) {
+    if (!element.classList.contains('fadeOut')) {
+        element.classList.add('fadeOut');
+        setTimeout(function() {
+            element.classList.add('hidden');
+        }, 400);
+        element.classList.remove('fadeIn');
+    } else {
+        element.classList.remove('hidden');
+        element.classList.remove('fadeOut');
+        element.classList.add('fadeIn');
+    }
     /* element.classList.add("fadeOut"); */
     /* К сожалению обычной css анимацией невозможно поставить "display: none;", 
     поэтому выполняем данный скрипт */
-    if (element.classList.contains('hidden')) {
+   /*  if (element.classList.contains('hidden')) {
         element.classList.remove('hidden');
         element.classList.remove('visuallyhidden');
         setTimeout(function () {
@@ -17,7 +28,7 @@ function hide(element) {
             once: true,
             passive: false
         });
-    }
+    } */
 }
 
 let btn = document.getElementById('locBtn');
@@ -38,6 +49,5 @@ input.onfocus = function() {
 };
 
 input.onblur = function() {
-    hide(list);    
-    list.classList.add('hidden');
+    hide(list);
 };

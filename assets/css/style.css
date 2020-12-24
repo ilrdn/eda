@@ -150,6 +150,7 @@ header .container>div:nth-child(2) button {
 .location__input form input {
     width: 100%;
     line-height: 24px;
+    background-color: #F5F5F5;
 }
 
 .location__input form input::-webkit-input-placeholder {
@@ -175,7 +176,8 @@ header .container>div:nth-child(2) button {
 .location__input .separator {
     margin: 0 15px;
     height: 30px;
-    border: 1px solid #C4C4C4;
+    width: 1px;
+    background-color:#C4C4C4;
 }
 
 .location__input button {
@@ -246,7 +248,8 @@ header .container>div:nth-child(2) button {
 /* nav */
 
 nav {
-    background-color: var(--main-green);
+    background-color: #9CCB3B;
+    /* background-color: var(--main-green); */
     padding: 10px 0;
 }
 

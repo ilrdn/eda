@@ -589,7 +589,3 @@ nav .container button.more:hover img {
 .hidden {
     display: none !important;
 }
-
-.visuallyhidden {
-    opacity: 0 !important;
-}

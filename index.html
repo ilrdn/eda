@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/assets/fonts/ProximaNova/stylesheet.css">
+    <link rel="stylesheet" href="/assets/css/tiny-slider.css">
     <link rel="stylesheet" href="/assets/css/style.css">
     <title>EDA</title>
 </head>
@@ -16,12 +17,12 @@
                 <a class="logo">
                     <img src="/assets/img/icons/logo.svg" alt="">
                 </a>
-                <div class="location__wrapper">
+                <div class="search__wrapper">
                     <button class="location__btn" id="locBtn">
                         <img src="/assets/img/icons/location.svg" alt="" class="icon__animation">
                         <span>ул. Петровско-Разумовская 17</span>
                     </button>
-                    <div class="location__input">
+                    <div class="search__input fadeOut hidden" id="locWrap">
                         <img src="/assets/img/icons/location.svg" alt="">
                         <form action=""><input type="text" placeholder="Введите адрес доставки" id="locInput"></form>
                         <div class="separator"></div>
@@ -48,11 +49,21 @@
                 </div>
             </div>
             <div>
-                <button class="search__btn">
-                    <img src="/assets/img/icons/search.svg" alt="" class="icon__animation">
-                    <span>Поиск</span>
-                </button>
-                <button class="login__btn">
+                <div class="search__wrapper">
+                    <button class="search__btn" id="srBtn">
+                        <img src="/assets/img/icons/search.svg" alt="" class="icon__animation">
+                        <span>Поиск</span>
+                    </button>
+                    <div class="search__input fadeOut hidden" id="srWrap">
+                        <img src="/assets/img/icons/location.svg" alt="">
+                        <form action=""><input type="text" placeholder="Итальянская кухня"></form>
+                        <div class="separator"></div>
+                        <button id="srClose">
+                            <img src="/assets/img/icons/x.svg" alt="">
+                        </button>
+                    </div>
+                </div>
+                <button class="login__btn" id="loginBtn">
                     <img src="/assets/img/icons/login.svg" alt="" class="icon__animation">
                     <span>Войти</span>
                 </button>
@@ -75,16 +86,61 @@
             <a href="" class="link"><span>Здоровая еда</span></a>
             <button class="more">
                 <span>Ещё</span>
-                <img src="/assets/img/icons/arrow.svg" alt="" style="margin-left: 15px;">
+                <img src="/assets/img/icons/arrow-white.svg" alt="" style="margin-left: 15px;">
             </button>
         </div>
     </nav>
     <section>
-        <div class="container"></div>
+        <div class="container cards__wrapper">
+            <h2>Предложения недели</h2>
+            <!-- https://github.com/ganlanyuan/tiny-slider -->
+            <div class="cards">
+                <li class="item">
+                    <div class="card">
+                        <div class="card__img">
+                            <img src="/assets/img/1.png" alt="">
+                        </div>
+                    </div>
+                </li>
+            </div>
+        </div>
     </section>
     <footer>
-        <div class="container"></div>
+        <div class="container">
+            <a href="" class="footer__logo"></a>
+            <div class="links"></div>
+            <div class="social__link"></div>
+            <div class="social__link"></div>
+            <div class="social__link"></div>
+            <div class="app__links">
+                <div class="app__link"></div>
+                <div class="app__link"></div>
+            </div>
+        </div>
     </footer>
+    <!-- Немного отошел от макета с модальным окном
+    1) Header и footer вместе с другими элементами поместил на задний план, 
+    чтобы свести фокус пользователя на момент открытия только на модальное окно
+    2) сместил кнопку закрытия (крестик) в соответствии с паддингами модального окна
+    Обе правки очень легко отменить и вернуть к макету -->
+    <div class="modal fadeOut hidden" id="modal">
+        <div class="popup" id="popup">
+            <button class="close" id="modalClose"></button>
+            <h3>Вход в личный кабинет</h3>
+            <form action="" class="form">
+                <label>
+                    <input type="text" placeholder=" " id="phone-mask">
+                    <span>Введите номер телефона</span>
+                </label>
+                <label>
+                    <input type="text" placeholder=" ">
+                    <span>Введите код из СМС-сообщения</span>
+                </label>
+            </form>
+        </div>
+    </div>
+<script src="https://unpkg.com/imask"></script>
+<script src="/assets/js/tiny-slider.js"></script>
 <script src="/assets/js/script.js"></script>
 </body>
 
